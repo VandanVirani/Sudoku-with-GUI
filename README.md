@@ -41,7 +41,15 @@ here we have first make empty list  , and store the location in that list whose 
 
 ```yml
 import numpy as np
-
+"""              [[1,5,2,4,8,9,3,7,6],
+                  [7,3,8,2,5,6,1,4,0],
+                  [0,0,0,0,0,1,2,9,5],
+                  [0,0,7,1,2,0,6,0,0],
+                  [5,0,0,7,0,3,0,0,8],
+                  [0,0,6,0,9,5,7,0,0],
+                  [9,1,4,6,0,0,0,0,0],
+                  [0,2,0,0,0,0,0,3,7],
+                  [8,0,0,5,1,2,0,0,4]]"""
 matrix =np.array([[1,0,0,4,8,9,0,0,6],
                   [7,3,0,0,0,0,0,4,0],
                   [0,0,0,0,0,1,2,9,5],
@@ -118,26 +126,27 @@ def solve(matrix):
     return matrix,matrixs
 
 
-def print_matrix(matrix,question):
-    def printing(matrix):
-        for i in range(1,10):
-            for j in range(1,10):
-                if j==1:
-                    print("|",end="") 
-                print(matrix[i-1,j-1]," ",end="")
-                if j%3==0:
-                    print("|",end="")      
-            print("")
-            if i%3==0:
-                print("-------------------------------")
+def print_matrix(matrix):
+    
+    for i in range(1,10):
+        for j in range(1,10):
+            if j==1:
+                print("|",end="") 
+            print(matrix[i-1,j-1]," ",end="")
+            if j%3==0:
+                print("|",end="")      
+        print("")
+        if i%3==0:
+            print("-------------------------------")
                 
-    print("Question is  :\n")
-    printing(question)
-    print("\nAnswer is :\n")
-    printing(matrix)
+    
     
 solved,que = solve(matrix)
-print_matrix(solved,que)
+print("Question is  :\n")
+print_matrix(que)    
+print("\nAnswer is :\n")
+print_matrix(solved)
+
 ```
 
 
