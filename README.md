@@ -33,12 +33,49 @@ def solve(matrix):
         for oo in range(len(matrix[o])):
             if matrix[o][oo] == 0:
                 x.append((o,oo))
+    rows=0
+    cols=0
+                 
 ```
 here we have first make empty list  , and store the location in that list whose element is 0 in matrix .
  
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+after rows=0 and cols=0 we continue , now in first for loop we are getting one by one position of the empty element . And make the instance of i which will help in backpropagates . we define a function which we helps us call inside just like recurssion function  . first we get the value which will be initially zero , then we make a for loop and search a number from 1 to 9 which in not in that row and columns , if that number is in that row or column 
+```yml
+rows=0
+cols=0
+
+for i in range(len(x)):
+                copy_i=i
+                rows=x[i][0]
+                cols=x[i][1]
+                def function(x,rows,cols,matrix,i,copy_i):
+                    g = matrix[rows][cols]
+                    
+                    for k in range(g+1,10):
+                        exits=0
+                        for l in range(len(matrix)):
+                            if matrix[rows][l] == k and k == 9 or matrix[l][cols] == k and k == 9:
+                                exits=2
+                                break
+                            elif matrix[rows][l] == k or matrix[l][cols] == k:
+                                exits=1
+                                break
+                            
+                        ro = copy.copy(rows)//3
+                        col = copy.copy(cols) //3
+                        for b in range(3):
+                            for n in range(3):
+                                if matrix[ro*3:ro*3+3,col*3:col*3+3][b][n]==k and k==9:
+                                  exits=2
+                                  break
+                                elif matrix[ro*3:ro*3+3,col*3:col*3+3][b][n] == k :
+                                  exits=1
+                                  break
+```
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```yml
 import numpy as np
 
@@ -65,7 +102,7 @@ def solve(matrix):
                 x.append((o,oo))
     rows=0
     cols=0
-    #print(x)
+ 
     for i in range(len(x)):
                 ww=i
                 rows=x[i][0]
