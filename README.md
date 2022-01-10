@@ -81,7 +81,7 @@ for i in range(len(x)):
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Now we have add before checking a if condition for backpropagation  if the number is already 9 than we will again backpropagate a layer by decrement i - 1 and call function again .
+Now we have add before checking a if condition for backpropagation  if the number is already 9 than we will again backpropagate a layer by decrement i - 1 and call function again . due to call the function again it will update the previos element .
 
 ```yml
 rows=0
