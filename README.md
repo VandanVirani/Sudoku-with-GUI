@@ -40,7 +40,8 @@ def solve(matrix):
 here we have first make empty list  , and store the location in that list whose element is 0 in matrix .
  
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-after rows=0 and cols=0 we continue , now in first for loop we are getting one by one position of the empty element . And make the instance of i which will help in backpropagates . we define a function which we helps us call inside just like recurssion function  . first we get the value which will be initially zero , then we make a for loop and search a number from 1 to 9 which in not in that row and columns , if that number is in that row or column we will make exits =1 , and if num is in row or col and num = 9 , it will make exits =2 , if number is not in row or col , it will not make any diffrence to exits which is intially zero. 
+after rows=0 and cols=0 we continue , now in first for loop we are getting one by one position of the empty element . And make the instance of i which will help in backpropagates . we define a function which we helps us call inside just like recurssion function  . first we get the value which will be initially zero ,in part 1 checking we make a for loop and search a number from 1 to 9 which in not in that row and columns , if that number is in that row or column we will make exits =1 , and if num is in row or col and num = 9 , it will make exits =2 , if number is not in row or col , it will not make any diffrence to exits which is intially zero. 
+In part 2 checking we will chech whether the number is in that 3 x 3 box or not same as previous one , if num is in box make exits =1  , if num is in box and having value 9 it will make exits = 2.
 ```yml
 rows=0
 cols=0
@@ -53,6 +54,7 @@ for i in range(len(x)):
                     g = matrix[rows][cols]
                     
                     for k in range(g+1,10):
+                        #------------------ part 1 checking
                         exits=0
                         for l in range(len(matrix)):
                             if matrix[rows][l] == k and k == 9 or matrix[l][cols] == k and k == 9:
@@ -61,7 +63,7 @@ for i in range(len(x)):
                             elif matrix[rows][l] == k or matrix[l][cols] == k:
                                 exits=1
                                 break
-                            
+                        #------------------ part 2 checking
                         ro = copy.copy(rows)//3
                         col = copy.copy(cols) //3
                         for b in range(3):
