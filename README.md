@@ -81,7 +81,7 @@ for i in range(len(x)):
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Now we have add before checking a if condition for backpropagation  if the number is already 9 than we will again backpropagate a layer by decrement i - 1 and call function again . due to call the function again it will update the previos element .
+Now we have add before checking a if condition for backpropagation  if the number is already 9 than we will again backpropagate a layer by decrement i - 1 and call function again . due to call the function again it will update the previous element .
 
 ```yml
 rows=0
@@ -127,7 +127,7 @@ for i in range(len(x)):
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Now after checking if exits = 0 means number is not in box or row or col that means we can put the value in that empty space after that copy_i != i 
+Now after checking if exits = 0 means number is not in box or row or col that means we can put the value in that empty space after that copy_i != i will help if we are in nested function or not if yes means copy_i is not equal to i so we will increment i (i+1) and again do function call until copy_i==i.
 
 ```yml
 rows=0
