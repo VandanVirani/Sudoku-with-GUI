@@ -40,7 +40,7 @@ def solve(matrix):
 here we have first make empty list  , and store the location in that list whose element is 0 in matrix .
  
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-after rows=0 and cols=0 we continue , now in first for loop we are getting one by one position of the empty element . And make the instance of i which will help in backpropagates . we define a function which we helps us call inside just like recurssion function  . first we get the value which will be initially zero , then we make a for loop and search a number from 1 to 9 which in not in that row and columns , if that number is in that row or column 
+after rows=0 and cols=0 we continue , now in first for loop we are getting one by one position of the empty element . And make the instance of i which will help in backpropagates . we define a function which we helps us call inside just like recurssion function  . first we get the value which will be initially zero , then we make a for loop and search a number from 1 to 9 which in not in that row and columns , if that number is in that row or column we will make exits =1 , and if num is in row or col and num = 9 , it will make exits =2 , if number is not in row or col , it will not make any diffrence to exits which is intially zero. 
 ```yml
 rows=0
 cols=0
