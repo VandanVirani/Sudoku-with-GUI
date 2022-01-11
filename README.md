@@ -127,7 +127,7 @@ for i in range(len(x)):
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Now after checking if exits = 0 means number is not in box or row or col that means we can put the value in that empty space after that copy_i != i will help if we are in nested function or not if yes means copy_i is not equal to i so we will increment i (i+1) and again do function call until copy_i==i.
+Now after checking if exits = 0 means number is not in box or row or col that means we can put the value in that empty space after that copy_i != i will help if we are in nested function or not if yes means copy_i is not equal to i so we will increment i (i+1) and again do function call until copy_i==i . Now if exits == 2  then it will move backward in list x by decrement the value of i ,  means go to previous updated element and again update because it is not correct value .
 
 ```yml
 rows=0
@@ -188,6 +188,8 @@ for i in range(len(x)):
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### COMPLETE CODE OF SUDOKU SOLVER
 ```yml
 import numpy as np
 
